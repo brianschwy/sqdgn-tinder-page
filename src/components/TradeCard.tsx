@@ -25,6 +25,10 @@ export const TradeCard = ({ trade }: TradeCardProps) => {
       className="trade-card"
     >
       <div className="trade-card-content">
+        <div className="flex items-center justify-center mb-4">
+          <ArrowRightLeft className="text-primary w-8 h-8" />
+        </div>
+        
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <User className="text-muted-foreground w-4 h-4" />
@@ -38,10 +42,6 @@ export const TradeCard = ({ trade }: TradeCardProps) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center mb-4">
-          <ArrowRightLeft className="text-primary w-8 h-8" />
-        </div>
-        
         <div className="mb-6">
           <div className="text-sm text-muted-foreground mb-2">
             {formatDistanceToNow(trade.time)} ago
