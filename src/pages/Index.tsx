@@ -35,7 +35,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background p-4">
-      <h1 className="text-2xl font-bold mb-8 text-primary glow">Terminal App</h1>
+      <h1 className="text-2xl font-bold mb-8 text-primary glow">$SQDGN</h1>
       
       <div className="w-full max-w-md mx-auto">
         <TradeCard trade={currentTrade} />
