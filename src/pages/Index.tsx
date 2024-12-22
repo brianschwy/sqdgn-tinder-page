@@ -45,19 +45,20 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background p-4 pt-12">
-      <div className="w-full max-w-5xl mx-auto relative">
-        <Button 
-          onClick={handleConnectWallet}
-          className="absolute right-4 top-0"
-          variant="outline"
-        >
-          <Wallet className="mr-2 h-4 w-4" />
-          Connect Wallet
-        </Button>
-        
-        <h1 className="text-2xl font-bold mb-8 text-primary glow">$SQDGN</h1>
+      <div className="w-full max-w-5xl mx-auto">
+        <div className="relative mb-8">
+          <Button 
+            onClick={handleConnectWallet}
+            className="absolute right-0 -top-8"
+            variant="outline"
+          >
+            <Wallet className="mr-2 h-4 w-4" />
+            Connect Wallet
+          </Button>
+        </div>
         
         <div className="w-full max-w-md mx-auto">
+          <h1 className="text-2xl font-bold mb-8 text-primary glow text-center">$SQDGN</h1>
           <TradeCard trade={currentTrade} />
           <ActionButtons onHot={handleHot} onNot={handleNot} />
         </div>
