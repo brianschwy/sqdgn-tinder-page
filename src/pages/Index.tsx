@@ -2,6 +2,8 @@ import { useState } from "react";
 import { TradeCard } from "@/components/TradeCard";
 import { ActionButtons } from "@/components/ActionButtons";
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
+import { Wallet } from "lucide-react";
 
 // Mock data - in a real app this would come from an API
 const mockTrade = {
@@ -34,13 +36,31 @@ const Index = () => {
     });
   };
 
+  const handleConnectWallet = () => {
+    toast({
+      title: "Connecting Wallet",
+      description: "Wallet connection feature coming soon!",
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-background p-4 pt-12">
-      <h1 className="text-2xl font-bold mb-8 text-primary glow">$SQDGN</h1>
-      
-      <div className="w-full max-w-md mx-auto">
-        <TradeCard trade={currentTrade} />
-        <ActionButtons onHot={handleHot} onNot={handleNot} />
+      <div className="w-full max-w-5xl mx-auto relative">
+        <Button 
+          onClick={handleConnectWallet}
+          className="absolute right-4 top-0"
+          variant="outline"
+        >
+          <Wallet className="mr-2 h-4 w-4" />
+          Connect Wallet
+        </Button>
+        
+        <h1 className="text-2xl font-bold mb-8 text-primary glow">$SQDGN</h1>
+        
+        <div className="w-full max-w-md mx-auto">
+          <TradeCard trade={currentTrade} />
+          <ActionButtons onHot={handleHot} onNot={handleNot} />
+        </div>
       </div>
     </div>
   );
