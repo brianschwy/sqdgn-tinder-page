@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { formatDistanceToNow } from "date-fns";
-import { ArrowRightLeft } from "lucide-react";
+import { formatDistanceToNow, format } from "date-fns";
+import { ArrowRightLeft, User, Clock } from "lucide-react";
 
 interface TradeCardProps {
   trade: {
@@ -12,6 +12,7 @@ interface TradeCardProps {
     fromValue: number;
     toValue: number;
     context: string;
+    userName: string;
   };
 }
 
@@ -24,6 +25,19 @@ export const TradeCard = ({ trade }: TradeCardProps) => {
       className="trade-card"
     >
       <div className="trade-card-content">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <User className="text-muted-foreground w-4 h-4" />
+            <span className="text-sm text-muted-foreground">{trade.userName}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="text-muted-foreground w-4 h-4" />
+            <span className="text-xs text-muted-foreground">
+              {format(trade.time, "MMM d, yyyy HH:mm")}
+            </span>
+          </div>
+        </div>
+
         <div className="flex items-center justify-center mb-4">
           <ArrowRightLeft className="text-primary w-8 h-8" />
         </div>

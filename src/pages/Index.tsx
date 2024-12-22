@@ -12,7 +12,8 @@ const mockTrade = {
   toAmount: 4092,
   fromValue: 7.36,
   toValue: 7.38,
-  context: "The user, who claims 'trying to buy early and selling before they moon :(', may be experimenting with new or lesser-known tokens."
+  context: "The user, who claims 'trying to buy early and selling before they moon :(', may be experimenting with new or lesser-known tokens.",
+  userName: "0xSquid.eth"
 };
 
 const Index = () => {
